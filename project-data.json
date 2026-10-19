@@ -1,0 +1,109 @@
+[
+  {
+    "slug": "crown-acts", "category": "Selected research", "title": "CROWN Acts and labour-market outcomes", "status": "Independent research", "tools": "Econometrics · Python · ACS", "repo": "crown-acts-labour-market", "external": "https://github.com/vigneshnara88/crown-acts-labour-market",
+    "summary": "Do protections against hair discrimination change Black women's employment, earnings, or occupational opportunities?",
+    "sections": [
+      {"title": "The question", "paragraphs": ["A narrowly targeted anti-discrimination policy may change individual hiring interactions without producing a large movement in broad labour-market measures. This paper studies that distinction using US state CROWN laws and American Community Survey data."]},
+      {"title": "Data and design", "paragraphs": ["The paper uses IPUMS ACS data for 2015–2024, constructing weighted state-by-year-by-race/sex cells for non-Hispanic Black and White adults aged 25–64. A triple-difference specification combines state-year, state-group and year-group fixed effects, with standard errors clustered by state.", "Employment, participation, self-employment, wage income and occupational measures address different possible margins. The implementation provides weighted cell preparation and estimation of the paper's core specification."]},
+      {"title": "Reported findings", "paragraphs": ["The paper reports small employment, participation and self-employment estimates. Wage and occupational results require a more qualified reading: broad averages do not isolate the specific hiring mechanism, and composition can affect observed earnings.", "These findings concern the measured outcomes and sample window. They do not establish that hair discrimination disappeared or that the laws had no effect."]},
+      {"title": "My contribution", "paragraphs": ["Independent research connecting a policy question, microdata construction and an econometric design. The repository documents the input schema, estimator and reported findings."]}
+    ]
+  },
+  {
+    "slug": "cfpb", "category": "Selected research", "title": "Complaint language and measured redress", "status": "Work in progress", "tools": "NLP · Python · Measurement", "repo": "consumer-complaints-language", "external": "https://github.com/vigneshnara88/consumer-complaints-language",
+    "summary": "Template reuse, text classification, and what consumer complaint records can tell us about reported relief.",
+    "sections": [
+      {"title": "The question", "paragraphs": ["Complaint narratives are both descriptions of consumer problems and products of how people write or obtain assistance. I am interested in how repeated wording and complaint composition affect what researchers infer from the CFPB database."]},
+      {"title": "Implementation", "paragraphs": ["The exploratory work uses TF-IDF, clustering, sentence embeddings and similarity measures. Later scripts add reusable text features, duplicate/template summaries and outcome models. A connected research proposal develops human-reviewed measurement and sensitivity to selection into narrative publication."]},
+      {"title": "What the work shows", "paragraphs": ["The saved exploratory work identifies substantial text reuse and differences between filtered complaint groups. These patterns motivate further measurement work; they do not establish AI authorship, fraudulent complaints, or a causal benefit of a writing style.", "Monetary relief, non-monetary relief and durable resolution are distinct outcomes. Company-reported closure categories cannot establish that a consumer's underlying problem was fixed."]},
+      {"title": "Background and acknowledgement", "paragraphs": ["This began as formally assessed DS202W coursework at LSE and developed into an independent project. I am grateful to Dr Ghita Berrada for valuable feedback and help iterating on the work."]}
+    ]
+  },
+  {
+    "slug": "econometrics-game", "category": "Selected research", "title": "Econometrics Game", "status": "Team competition · second place", "tools": "Python · Stata · Causal inference", "repo": "econometrics-game-2026", "external": "https://github.com/vigneshnara88/econometrics-game-2026",
+    "summary": "Applying empirical methods to education and fertility questions under competition time constraints.",
+    "sections": [
+      {"title": "Two empirical settings", "paragraphs": ["The preliminary-round work studies heterogeneous responses to performance-based financial aid. The final-round work examines whether the 2010 OxyContin reformulation changed fertility more in states with greater baseline exposure."]},
+      {"title": "Methods", "paragraphs": ["The education analysis uses random assignment as an instrument for programme participation, with subgroup first-stage and outcome comparisons. The fertility analysis uses a continuous-exposure difference-in-differences design, state and year fixed effects, and event-study analysis.", "The source materials include Python data-building and analysis scripts, Stata specifications, and saved tables and figures."]},
+      {"title": "Teamwork", "paragraphs": ["Our team placed second. This is joint competition work; the project should be read as a team contribution rather than a claim of sole authorship. The central learning was turning an unfamiliar question into a defensible empirical workflow under time constraints."]}
+    ]
+  },
+  {
+    "slug": "rd-external-validity", "category": "Selected research", "title": "External validity of regression discontinuity", "status": "Research assistance · private package", "tools": "R · Python · Package interfaces",
+    "summary": "Frontend and package development for a new approach to extending regression discontinuity beyond the cutoff.",
+    "sections": [
+      {"title": "Research direction and credit", "paragraphs": ["The core research ideas and intellectual direction belong to Professor Kirill Borusyak, Dr Luther Yap and Dr Sid George. My role is research support through technical implementation, testing, diagnostics and empirical validation."]},
+      {"title": "Why external validity matters", "paragraphs": ["A regression discontinuity design can identify an effect around a threshold, while a policy decision may concern people elsewhere in the population. The project studies what additional structure and information can help connect these questions."]},
+      {"title": "Frontend and package development", "paragraphs": ["I developed the frontend and worked on packaging the researchers' approach so that it could be used through a clearer interface. The private AIPW_RD repository contains R and Python interfaces, examples, documentation and structured estimation outputs.", "This package-development work sits alongside implementation support, comparisons across specifications, diagnostic checks, and figures and tables for research presentations. The methodological contribution belongs to the researchers; my contribution is making the approach easier to use and inspect.", "AIPW_RD remains private because it supports unpublished collaborative research. This page describes the software contribution without distributing the research implementation."]}
+    ]
+  },
+  {
+    "slug": "switchf1", "category": "Data science", "title": "SwitchF1", "status": "Public research software", "tools": "Python · NLP evaluation", "external": "https://github.com/vigneshnara88/SwitchF1",
+    "summary": "A self-developed ASR evaluation tool, motivated by the agentic code-switching project, for measuring language-switch preservation.",
+    "sections": [
+      {"title": "Why I built it", "paragraphs": ["I developed SwitchF1 while working on agentic code-switching generation. I wanted to assess whether a speech-recognition model preserved a speaker's switches between languages, as well as whether it recognised individual words correctly.", "Ordinary word error rate counts substitutions, deletions and insertions. It does not directly isolate whether a language switch was preserved, missed or invented. SwitchF1 adds that focused view by comparing a reference transcript with the model's prediction, using explicit token-language labels and text alignment."]},
+      {"title": "Familiar F1 mathematics, a specific evaluation task", "paragraphs": ["The mathematics follows ordinary precision, recall and F1. A correctly matched directed switch is a true positive; an extra predicted switch is a false positive; a missed reference switch is a false negative. Precision = TP / (TP + FP), recall = TP / (TP + FN), and F1 = 2TP / (2TP + FP + FN).", "My contribution is the implementation and the definition of how switch events are aligned, matched and counted in this setting. It applies the familiar scoring framework to the gap I encountered in code-switched ASR evaluation, rather than introducing a new F1 formula."]},
+      {"title": "The implementation", "paragraphs": ["The public repository includes a versioned scoring specification, Python API and command-line interface, worked examples, adversarial scenarios and tests. Explicit language labels allow the method to address languages that share a script."]},
+      {"title": "Interpretation", "paragraphs": ["For ASR evaluation, the reference words and language labels should be checked against the speech, and predicted labels should be obtained independently. The score measures switch preservation in the resulting text; without timestamps it does not establish the exact moment of a switch in the audio.", "SwitchF1 complements WER and CER. A model can preserve the language transition while still transcribing the surrounding words incorrectly. When there are no reference or predicted switches, the switching F1 is undefined rather than automatically perfect."]}
+    ]
+  },
+  {
+    "slug": "code-switching", "category": "Data science", "title": "Rule-guided code switching", "status": "Ongoing independent work", "tools": "Language rules · Agents · Annotation", "repo": "code-switching-generation", "external": "https://github.com/vigneshnara88/code-switching-generation",
+    "summary": "Exploring generation and review workflows for realistic multilingual text, with explicit linguistic constraints.",
+    "sections": [
+      {"title": "Motivation", "paragraphs": ["Multilingual speakers move between languages in ways that depend on grammar, context and community. This project explores how explicit rules and iterative generation/review can support code-switched text, rather than treating language mixing as random word substitution."]},
+      {"title": "Available implementation", "paragraphs": ["English–Tamil and Malay–English packages organise language guidance, meaning preservation, annotation conventions, example provenance and review procedures. The packages include executable validation and benchmark-audit utilities.", "The broader generation workflow pairs drafting with rule-based review. Speaker evaluation is needed to establish naturalness, semantic fidelity and whether generated material is useful for a downstream task."]},
+      {"title": "Longer-term questions", "paragraphs": ["Potential directions include language documentation, cross-linguistic comparison and multilingual speech technology. These are research directions, not established evidence that synthetic text preserves a community's linguistic conventions.", "The work was influenced by internship experience. Any release of broader training materials depends on their provenance and ownership."]}
+    ]
+  },
+  {
+    "slug": "kuwait", "category": "Data science", "title": "Missing data in Kuwait's air-quality network", "status": "Collaborative research", "tools": "Python · Environmental data",
+    "summary": "Understanding station coverage, sustained outages and the modelling challenges of PM2.5 concentrations.",
+    "sections": [
+      {"title": "The data problem", "paragraphs": ["Missing environmental measurements are not always isolated gaps. Stations may have prolonged outages, incompatible naming conventions or no sensor for a particular pollutant. These distinctions affect both imputation and the interpretation of a prediction model."]},
+      {"title": "Technical work", "paragraphs": ["The project materials include missingness visualisation, station harmonisation, time-series exploration, regression diagnostics and studies of imputation under sustained outages. Modelling choices must account for spikes and the temporal and spatial structure of the observations."]},
+      {"title": "Collaboration", "paragraphs": ["The research proposal identifies Dr Ghita Berrada as principal investigator and Dr Huda Alrashidi as co-principal investigator. Additional collaborators' contributions, including Oskar's modelling work, will be credited in any detailed release. Research code and data are subject to permission before publication."]}
+    ]
+  },
+  {
+    "slug": "pe-de-meia", "category": "Developing research", "title": "Pé-de-Meia: schooling and work", "status": "Research proposal", "tools": "Python · Policy evaluation", "repo": "pe-de-meia-school-work", "external": "https://github.com/vigneshnara88/pe-de-meia-school-work",
+    "summary": "When financial incentives keep adolescents in school, how do their work choices change?",
+    "sections": [
+      {"title": "The question", "paragraphs": ["A schooling incentive can lead adolescents to leave work, reduce hours, change jobs, combine school and work, or return to education from neither activity. These responses can produce similar schooling outcomes while implying very different changes in the burden of work."]},
+      {"title": "Proposed data and design", "paragraphs": ["The proposal centres on PNAD Contínua, with administrative schooling, payment and formal-employment sources as complements. The baseline compares changes for adolescents predicted to be eligible with those in a nearby income band, using a difference-in-differences and event-study framework.", "The code supports explicit sample construction and design preparation. The planned sample avoids conditioning on current enrolment, because schooling is itself an outcome."]},
+      {"title": "What needs to be identified", "paragraphs": ["Survey income is not the administrative income measure used to assign benefits, and predicted eligibility is not observed receipt. The proposal therefore targets a reduced-form comparison, with attention to rollout timing, comparison-band choices and household income excluding the adolescent's own earnings.", "This is a research proposal. The portfolio does not present completed programme-effect estimates."]}
+    ]
+  },
+  {
+    "slug": "visual-field", "category": "Developing research", "title": "Adaptive visual-field testing", "status": "Exploratory simulation", "tools": "Python · Sequential estimation", "repo": "visual-field-adaptive-testing", "external": "https://github.com/vigneshnara88/visual-field-adaptive-testing",
+    "summary": "Exploring the trade-off between measurement burden, uncertainty and accuracy in visual-field testing.",
+    "sections": [
+      {"title": "The research idea", "paragraphs": ["Could adaptive statistical methods and thoughtful testing workflows make visual-field assessment more efficient and comfortable? I am exploring this through sequential threshold estimation and a review of testing algorithms and patient experience."]},
+      {"title": "The code", "paragraphs": ["An offline simulator represents synthetic observers with probabilistic responses, then compares a staircase procedure with a discrete Bayesian estimator. It provides a way to explore presentation budgets, response errors and stopping rules.", "This is a simulation framework, not a validated clinical test or a replacement for a Humphrey Field Analyzer. No patient outcomes or clinical performance are claimed."]},
+      {"title": "Starting literature", "links": [
+        {"label": "Heijl et al. (2019): SITA Faster and established efficiency benchmarks", "url": "https://pubmed.ncbi.nlm.nih.gov/30336129/"},
+        {"label": "Muthusamy et al. (2020): adaptive spatial sampling with ARREST", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7745600/"},
+        {"label": "qVFM (2021): Bayesian active learning in simulated observers", "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2021.596616/full"},
+        {"label": "Lu et al. (2024): patient experience and testing barriers", "url": "https://pubmed.ncbi.nlm.nih.gov/39083020/"},
+        {"label": "Open Perimetry Initiative: research software and interfaces", "url": "https://opi.lei.org.au/"}
+      ]},
+      {"title": "Further questions", "paragraphs": ["Patient instructions, pacing and accessible hardware deserve investigation alongside algorithms. Their effects would require separate studies; a simulation cannot demonstrate comfort or clinical reliability."]}
+    ]
+  },
+  {
+    "slug": "single-stair", "category": "Developing research", "title": "Building rules and housing supply", "status": "Empirical exploration", "tools": "Python · Open data · Housing", "repo": "single-stair-housing", "external": "https://github.com/vigneshnara88/single-stair-housing",
+    "summary": "Using building-permit data to examine story counts, housing rules and candidate policy comparisons.",
+    "sections": [
+      {"title": "Question and implementation", "paragraphs": ["This exploration asks whether restrictions affecting single-stair buildings leave observable patterns in the height and composition of housing construction. Scripts collect and harmonise permit data, construct story-year panels, and examine descriptive and policy-timing comparisons."]},
+      {"title": "What the exploration revealed", "paragraphs": ["Source availability and comparability are central to the design. The existing reports identify differences in permit coverage and a very thin pre-reform sample for one proposed comparison. The exploratory patterns are useful for assessing feasibility, not sufficient to establish a causal housing-supply effect."]}
+    ]
+  },
+  {
+    "slug": "ukhls", "category": "Independent projects", "title": "Family background in longitudinal data", "status": "Independent exploration", "tools": "Stata · UKHLS", "repo": "ukhls-family-background", "external": "https://github.com/vigneshnara88/ukhls-family-background",
+    "summary": "Constructing multiwave household data to explore adoption, family background and socioeconomic outcomes.",
+    "sections": [
+      {"title": "Data construction", "paragraphs": ["The Stata workflow links person and household records across UKHLS waves, harmonises adoption and stepchild fields, and prepares socioeconomic measures. The project is motivated by the difficulties of separating family circumstances, selection and individual outcomes."]},
+      {"title": "Interpretation", "paragraphs": ["This is an independent empirical exploration. Adoption and family-background comparisons in observational data do not by themselves identify the separate effects of nature and nurture. Access to the licensed source data is required; microdata are not included."]}
+    ]
+  }
+]
